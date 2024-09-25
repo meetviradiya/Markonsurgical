@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            /* Midnight Blue */
+            --secondary-color: #ecf0f1;
+            /* Clouds */
+            --accent-color: #e74c3c;
+            /* Alizarin */
+            --background-color: #ecf0f1;
+            /* Clouds */
+            --text-color: #2c3e50;
+            /* Midnight Blue */
+            --navbar-background: #34495e;
+            /* Wet Asphalt */
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--navbar-background);
+            color: white;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .hero {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .hero h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            /* Center align text and image */
+        }
+
+        .product-image {
+            width: 100%;
+            /* Make image responsive */
+            height: auto;
+            /* Maintain aspect ratio */
+            border-radius: 5px;
+            /* Slightly round corners */
+            margin-bottom: 15px;
+            /* Space between image and text */
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .more-info {
+            margin-top: 10px;
+            padding: 10px 15px;
+            border: none;
+            background-color: var(--accent-color);
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 500px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close {
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+        }
+
+        .back-button button {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .back-button a {
+            padding: 10px 20px;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .back-button a:hover {
+            background-color: #c0392b;
+            /* Darker shade of Alizarin */
+        }
+
+        .back-button a i {
+            margin-right: 8px;
+            /* Space between the icon and text */
+        }
+
+
+        @media (max-width: 768px) {
+            .back-button {
+                display: flex;
+                justify-content: center;
+                margin-left: auto;
+                margin-right: auto;
+                margin: 0px;
+                /* padding: 0px 0px 15px 0px; */
+            }
+
+            .popup-content {
+                width: 90%;
+            }
+        }
+    </style>
+    <title>Product Page</title>
+</head>
+
+<body>
+    <header>
+        <a href="./index.html" style="display: contents";>
+            <div class="logo" style="display: contents; justify-content: center;"><img
+                    src="./img/IMG_0432-ai-brush-removebg-vnzwgmcc.png" width="100px"
+                    style="margin-left: auto; margin-right: auto;"> </div>
+        </a>
+        <!-- <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="#product">Products</a></li>
+                <li><a href="./index.html">About Us</a></li>
+                <li><a href="./index.html">Contact</a></li>
+            </ul>
+        </nav> -->
+    </header>
+
+    <section id="product">
+        <section class="hero">
+            <h1>Explore Our Wheelchair Range</h1>
+            <p>Find the perfect wheelchair to fit your needs and lifestyle.</p>
+        </section>
+
+        
+        <div class="container">
+            <div class="back-button">
+                <a href="index.html">&#8592; Back To Home</a>
+            </div>
+            <div class="product-container">
+                <div class="product-card" id="product1">
+                    <img src="./img/WhatsApp Image 2024-09-14 at 17.54.51_2b83b0eb.jpg" alt="Product 1"
+                        class="product-image">
+                    <h2>Crome Plated Wheelchair</h2>
+                    <p>"Durable and sleek, our Chrome Plated Wheelchair combines strength with style for unmatched
+                        mobility."</p>
+                    <button class="more-info" onclick="togglePopup('popup1')">More Info</button>
+                </div>
+                <div class="product-card" id="product2">
+                    <img src="./img/WhatsApp Image 2024-09-14 at 17.54.52_7a7111bf.jpg" alt="Product 2"
+                        class="product-image">
+                    <h2>Powder Coted Wheelchair</h2>
+                    <p>"Reliable and rust-resistant, our Powder Coated Wheelchair offers long-lasting durability and
+                        smooth
+                        mobility."</p>
+                    <button class="more-info" onclick="togglePopup('popup2')">More Info</button>
+                </div>
+                <div class="product-card" id="product3">
+                    <img src="./img/WhatsApp Image 2024-09-14 at 17.54.52_916f14ac.jpg" alt="Product 3"
+                        class="product-image">
+                    <h2>U Shape Commode Wheelchair</h2>
+                    <p>"The U-Shape Commode Wheelchair provides easy hygiene access, combining mobility with comfort and
+                        convenience for daily use."</p>
+                    <button class="more-info" onclick="togglePopup('popup3')">More Info</button>
+                </div>
+                <div class="product-card" id="product4">
+                    <img src="./img/WhatsApp Image 2024-09-14 at 17.54.52_dc3080dc.jpg" alt="Product 4"
+                        class="product-image">
+                    <h2>Full Commode Wheelchair</h2>
+                    <p>"The Full Commode Wheelchair offers integrated mobility and toileting, designed for comfort,
+                        hygiene,
+                        and ease of use."</p>
+                    <button class="more-info" onclick="togglePopup('popup4')">More Info</button>
+                </div>
+                <div class="product-card" id="product5">
+                    <img src="./img/WhatsApp Image 2024-09-14 at 17.54.52_fe441f63.jpg" alt="Product 5"
+                        class="product-image">
+                    <h2>Product 5</h2>
+                    <p>Short description of Product 5.</p>
+                    <button class="more-info" onclick="togglePopup('popup5')">More Info</button>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div id="popup1" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="togglePopup('popup1')">&times;</span>
+                <h2>Chrome Plated Wheelchair</h2>
+                <p>A chrome-plated wheelchair is a mobility device that combines durability with a sleek, polished
+                    aesthetic. The chrome plating not only provides a shiny, reflective finish, but also offers
+                    corrosion resistance, making it ideal for both indoor and outdoor use. Here’s a more detailed
+                    description:</p>
+            </div>
+        </div>
+        <div id="popup2" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="togglePopup('popup2')">&times;</span>
+                <h2>Powder Coated Wheelchair</h2>
+                <p>A powder-coated wheelchair is a highly durable and visually appealing mobility aid designed for users
+                    seeking long-lasting performance and protection. Powder coating is a specialized finish applied to
+                    the wheelchair's metal frame, offering superior resistance to corrosion, chipping, and wear compared
+                    to traditional paint.</p>
+            </div>
+        </div>
+        <div id="popup3" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="togglePopup('popup3')">&times;</span>
+                <h2>U Shape Commode Wheelchair</h2>
+                <p>The U-Shaped Commode Wheelchair is a versatile mobility aid designed for individuals who require
+                    assistance with both mobility and toileting needs. This wheelchair combines the functions of a
+                    commode and a transport chair, providing convenience and ease for both the user and caregivers.</p>
+            </div>
+        </div>
+        <div id="popup4" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="togglePopup('popup4')">&times;</span>
+                <h2>Full Shape Commode Wheelchair</h2>
+                <p>The Full Shape Commode Wheelchair is a versatile and practical mobility solution, specifically
+                    designed for individuals who require both mobility assistance and a built-in commode feature for
+                    personal hygiene. It is ideal for home use, hospitals, and care facilities, providing comfort, ease
+                    of use, and independence.</p>
+            </div>
+        </div>
+        <div id="popup5" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="togglePopup('popup5')">&times;</span>
+                <h2>More Info about Product 5</h2>
+                <p>Detailed information about Product 5.</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Markon Surgical |<a href="tel: +919727443804" style="color: white; text-decoration: none;">
+                Designed by MV</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function togglePopup(popupId) {
+            const popup = document.getElementById(popupId);
+            popup.style.display = (popup.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        // Close the pop-up when clicking outside of it
+        window.onclick = function (event) {
+            const popups = document.querySelectorAll('.popup');
+            popups.forEach(popup => {
+                if (event.target === popup) {
+                    popup.style.display = 'none';
+                }
+            });
+        }
+
+    </script>
+</body>
+
+</html>
